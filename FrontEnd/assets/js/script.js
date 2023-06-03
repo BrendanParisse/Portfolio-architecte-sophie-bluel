@@ -302,11 +302,12 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             const fileReader = new FileReader();
-            fileReader.readAsDataURL(file);
-            fileReader.addEventListener("load", function (e) {
+            fileReader.onload = function (e) {
+                const imageData = e.target.result;
                 box.innerHTML = "";
-                box.innerHTML = '<img src="./assets/images/' + file.name + '" />';
-            });
+                box.innerHTML = '<img src="' + imageData + '" />';
+            };
+            fileReader.readAsDataURL(file);
         }
     }
 
