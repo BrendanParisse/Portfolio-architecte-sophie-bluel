@@ -26,7 +26,7 @@ async function Submit(evenement) {
 
     if (data.token) {
         localStorage.setItem('token', data.token)
-        document.location.href = 'http://127.0.0.1:5500/Portfolio-architecte-sophie-bluel/FrontEnd/index.html'
+        document.location.href = '../FrontEnd/index.html'
     }
     else (
         alert("Email ou mot de passe invalide")
